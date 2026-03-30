@@ -1,3 +1,5 @@
+# Undocumented Behaviors
+
 ## Undocumented Behavior #1
 - **File**: `packages/excalidraw/components/App.tsx`
 - **Issue**: Double-click handling is split across two event paths. The canvas stores browser click positions in `lastCompletedCanvasClicks` for mouse-driven double-click gating, while pointer-up events separately derive `lastPointerUpIsDoubleClick` for touch and text-edit flows. This creates an implicit state machine spanning click history, pointer history, and input type.
